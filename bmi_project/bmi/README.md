@@ -1,3 +1,8 @@
+# Project description
+
+This BMI Calculculator is designed to process both metric and imperial units.
+Not only can the user see his/hers BMI score but also the associated BMI zone and a short decription.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
