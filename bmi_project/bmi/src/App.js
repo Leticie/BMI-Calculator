@@ -5,6 +5,7 @@ import { SelectedBMICalculator } from "./components/SelectedBMICalculator";
 import { ResultsDisplay } from "./components/Display";
 import { determineBmiZone } from "./helpers/BmiHelpers";
 import { IMPERIAL, METRIC } from "./constants/constants";
+import "./App.css";
 
 
 const App = () => {
@@ -28,7 +29,7 @@ const App = () => {
   const handleChangeBmiZone = (value) => setBmiZone(value);
 
   return (
-    <div>
+    <div className="main">
       <h1>BMI CALCULATOR</h1>
       <AppDecription />
       <MeasurementInfo measurement={newMeasurement} />
