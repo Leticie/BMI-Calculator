@@ -15,13 +15,6 @@ const App = () => {
   const [bmi, setBmi] = useState("");
   const [bmiZone, setBmiZone] = useState("");
 
-  const switchMeasurementSystem = () => {
-    if (newMeasurement === METRIC) {
-      setNewMeasurement(IMPERIAL);
-    } else {
-      setNewMeasurement(METRIC);
-    }
-  };
 
   const handleChangeWeight = (value) => setWeight(value);
   const handleChangeHeightCentimeters = (value) => setHeightCentimeters(value);
@@ -33,7 +26,11 @@ const App = () => {
       <h1>BMI CALCULATOR</h1>
       <AppDecription />
       <MeasurementInfo measurement={newMeasurement} />
-      <button onClick={switchMeasurementSystem}>switch</button>
+    <div className="switch-buttons">
+      <button onClick={() => setNewMeasurement(METRIC)}>Metric</button>
+      <button onClick={() => setNewMeasurement(IMPERIAL)}>Imperial</button>
+    </div>  
+    <div className="calculator">
       <SelectedBMICalculator
         newMeasurement={newMeasurement}
         handleChangeWeight={handleChangeWeight}
@@ -45,6 +42,7 @@ const App = () => {
         determineBmiZone={determineBmiZone}
         handleChangeBmiZone={handleChangeBmiZone}
       />
+    </div>
       <ResultsDisplay bmi={bmi} bmiZone={bmiZone} />
     </div>
   );

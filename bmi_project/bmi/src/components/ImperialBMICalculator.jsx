@@ -44,12 +44,10 @@ export const ImperialBMICalculator = ({ weight, setWeight, heightCentimeters, se
 
 
     return (
-        <div className="input-section">
+        <div>
             <form>
                 <h3>Weight</h3>
-                <div>
-                    <input className="input" type="number" value={weightPounds} onChange={handleWeightPoundsChange}></input> lbs
-                </div>
+                <input className="input" type="number" value={weightPounds} onChange={handleWeightPoundsChange}></input> lbs
                 <h3>Height</h3>
                 <div>
                     <input className="input" type="number" value={heightFeet} onChange={handleHeightFeetChange}></input> ft
@@ -58,7 +56,7 @@ export const ImperialBMICalculator = ({ weight, setWeight, heightCentimeters, se
                     <input className="input" type="number" value={heightInches} onChange={handleHeightInchesChange}></input> in
                 </div>
                 <div>
-                    <button className={"button button1"} onClick={handleClick}>submit</button>
+                    <button className="submit-button" onClick={handleClick}>submit</button>
                 </div>
             </form>
         </div>
