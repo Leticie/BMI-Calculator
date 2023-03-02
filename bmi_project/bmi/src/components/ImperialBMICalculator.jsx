@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./ImperialBMICalculator.css"
 
 const heightImperialToMetric = (feet, inches) => {
     const feetToCentimeters = feet * 30.48
@@ -10,14 +11,14 @@ const heightImperialToMetric = (feet, inches) => {
 const weightImperialToMetric = (weight) => {
     const poundsToKilos = weight * 0.453
     return poundsToKilos
-}    
+}
 
-export const ImperialBMICalculator = ({weight, setWeight, heightCentimeters, setHeightCentimeters, calculateBmi, handleChangeBmi, bmi, determineBmiZone, handleChangeBmiZone}) => {
+export const ImperialBMICalculator = ({ weight, setWeight, heightCentimeters, setHeightCentimeters, calculateBmi, handleChangeBmi, bmi, determineBmiZone, handleChangeBmiZone }) => {
     const [heightFeet, setHeightFeet] = useState("")
     const [heightInches, setHeightInches] = useState("")
     const [weightPounds, setWeightPounds] = useState("")
 
-    
+
     const handleWeightPoundsChange = (event) => {
         setWeightPounds(event.target.value)
         setWeight(weightImperialToMetric(weightPounds))
@@ -30,7 +31,7 @@ export const ImperialBMICalculator = ({weight, setWeight, heightCentimeters, set
         setHeightInches(event.target.value)
         setHeightCentimeters(heightImperialToMetric(heightFeet, heightInches))
     }
-    
+
     const handleClick = (event) => {
         event.preventDefault()
 
@@ -43,20 +44,23 @@ export const ImperialBMICalculator = ({weight, setWeight, heightCentimeters, set
 
 
     return (
-        <div>
+        <div className="input-section">
             <form>
                 <h3>Weight</h3>
-                    <input type="number" value={weightPounds} onChange={handleWeightPoundsChange}></input>
-                    <p>lbs</p>
+                <div>
+                    <input className="input" type="number" value={weightPounds} onChange={handleWeightPoundsChange}></input> lbs
+                </div>
                 <h3>Height</h3>
-                    <input type="number" value={heightFeet} onChange={handleHeightFeetChange}></input>
-                    <p>ft</p>
-                    <input type="number" value={heightInches} onChange={handleHeightInchesChange}></input>
-                    <p>in</p>
+                <div>
+                    <input className="input" type="number" value={heightFeet} onChange={handleHeightFeetChange}></input> ft
+                </div>
+                <div>
+                    <input className="input" type="number" value={heightInches} onChange={handleHeightInchesChange}></input> in
+                </div>
                 <div>
                     <button className={"button button1"} onClick={handleClick}>submit</button>
-                </div>  
-            </form>        
+                </div>
+            </form>
         </div>
     )
 

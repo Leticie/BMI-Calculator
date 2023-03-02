@@ -1,3 +1,5 @@
+import "./MetricBMICalculator.css"
+
 export const MetricBMICalculator = ({weight, setWeight, heightCentimeters, setHeightCentimeters, calculateBmi, handleChangeBmi, bmi, determineBmiZone, handleChangeBmiZone}) => {
 
     const handleChangeWeight = (event) => setWeight(event.target.value);
@@ -16,11 +18,9 @@ export const MetricBMICalculator = ({weight, setWeight, heightCentimeters, setHe
         <div>
             <form>
                 <h3>Weight</h3>
-                    <input type="number" value={weight} onChange={handleChangeWeight}></input>
-                    <p>kg</p>
+                    <input className="input" type="number" value={weight} onChange={handleChangeWeight}></input> kg
                 <h3>Height</h3>
-                    <input type="number" value={heightCentimeters} onChange={handleChangeHeightCentimeters}></input>
-                    <p>cm</p>
+                    <input className="input" type="number" value={heightCentimeters} onChange={handleChangeHeightCentimeters}></input> cm
                 <div>
                     <button className={"button button1"} onClick={handleClick}>submit</button>
                 </div>  
