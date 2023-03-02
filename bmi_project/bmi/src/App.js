@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { AppDecription } from "./components/AppDescription";
-import { MeasurementInfo } from "./components/MeasurementInfo";
 import { SelectedBMICalculator } from "./components/SelectedBMICalculator";
 import { ResultsDisplay } from "./components/Display";
 import { determineBmiZone } from "./helpers/BmiHelpers";
@@ -25,7 +24,6 @@ const App = () => {
     <div className="main">
       <h1>BMI CALCULATOR</h1>
       <AppDecription />
-      <MeasurementInfo measurement={newMeasurement} />
     <div className="switch-buttons">
       <button onClick={() => setNewMeasurement(METRIC)}>Metric</button>
       <button onClick={() => setNewMeasurement(IMPERIAL)}>Imperial</button>
